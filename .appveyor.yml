@@ -2,7 +2,7 @@ image: Visual Studio 2015
 
 before_build:
 - mkdir ..\build\ && cd ..\build\
-- cmake ..\portaudio
+- cmake -DCMAKE_BUILD_TYPE=Release ..\portaudio
 
 build:
   project: ..\build\portaudio.sln
@@ -11,7 +11,7 @@ build:
 
 after_build:
 - cd ..\portaudio
-- 7z a portaudio.7z ..\build\
+- 7z a pa19-win32-x86-release-build.7z ..\build\ ..\include\
 
 artifacts:
-- path: .\portaudio.7z
+- path: .\pa19-win32-x86-release-build.7z
