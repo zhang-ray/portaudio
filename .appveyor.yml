@@ -1,0 +1,17 @@
+image: Visual Studio 2015
+
+before_build:
+- mkdir ..\build\ && cd ..\build\
+- cmake ..\portaudio
+
+build:
+  project: ..\build\portaudio.sln
+  parallel: true
+  #verbosity: quiet
+
+after_build:
+- cd ..\portaudio
+- 7z a portaudio.7z ..\build\
+
+artifacts:
+- path: .\portaudio.7z
