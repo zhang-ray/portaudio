@@ -4,6 +4,9 @@ before_build:
 - mkdir ..\build\ && cd ..\build\
 - cmake -DCMAKE_BUILD_TYPE=Release ..\portaudio
 
+configuration:
+  - Release
+
 build:
   project: ..\build\portaudio.sln
   parallel: true
